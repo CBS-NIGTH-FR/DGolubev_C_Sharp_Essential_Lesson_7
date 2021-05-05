@@ -11,7 +11,7 @@ namespace Exercise_3
             MyClass myClass = new MyClass();
             myStruct.change = "Не изменено";
             myClass.change = "Не изменено";
-            StruktTaker(ref myStruct);
+            StruktTaker(myStruct);
             ClassTaker(myClass);
             Console.WriteLine($"Поле - {myClass.change}");
             Console.WriteLine($"Поле - {myStruct.change}");
@@ -22,7 +22,12 @@ namespace Exercise_3
             myClass.change = "Изменено";
         }
 
-        static void StruktTaker(ref MyStruct myStruct)
+        //static void StruktTaker(ref MyStruct myStruct)
+        //{
+        //    myStruct.change = "Изменено"; 
+        //}
+        // А если не ссылке передавать то будет другой результат))
+        static void StruktTaker(MyStruct myStruct)
         {
             myStruct.change = "Изменено";
         }
